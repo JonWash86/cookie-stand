@@ -1,19 +1,29 @@
-var store1{
+function hourlyCustomers(x,y){
+  min = Math.ceil(x);
+  max = Math.floor(y+1);
+  return Math.floor(Math.random()*(max-min)) + min;
+}
+
+var store1 = {
+  name:"Pioneer Square",
+  hourlyCookies: function(){
+    return Math.random()
+  }
+}
+
+var store2 = {
+  name:"Portland Airport",
 
 }
 
-var store2{
-
+var store3 = {
+  name:"Washington Square",
 }
 
-var store3{
-
+var store4 = {
+  name:"Sellwood",
 }
 
-var store4{
-
-}
-
-var store5{
-  
+var store5 = {
+  name:"Pearl District",
 }
