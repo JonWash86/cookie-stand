@@ -64,11 +64,23 @@ Shoppe.prototype.randomHourlyCookies = function(){
 }
 
 var PioneerSquareShoppe = new Shoppe("Pioneer Square", 17, 88, 5.2);
-/*var
-var
-var
-var
-*/
+var PortlandAirportShoppe = new Shoppe("Portland Airport", 6, 24, 1.2);
+var WashingtonSquareShoppe = new Shoppe("Washington Square", 11, 38, 1.9);
+var SellwoodShoppe = new Shoppe("Sellwood", 20, 48, 3.3);
+var PearlDistrictShoppe = new Shoppe("Pearl District", 3, 24, 2.6);
+
 console.log(PioneerSquareShoppe);
-console.log(PioneerSquareShoppe.generateRandom());
 console.log(PioneerSquareShoppe.randomHourlyCookies());
+
+console.log(PortlandAirportShoppe);
+console.log(PortlandAirportShoppe.randomHourlyCookies());
+
+console.log(WashingtonSquareShoppe);
+console.log(WashingtonSquareShoppe.randomHourlyCookies());
+
+console.log(SellwoodShoppe);
+console.log(SellwoodShoppe.randomHourlyCookies());
+
+
+console.log(PearlDistrictShoppe);
+console.log(PearlDistrictShoppe.randomHourlyCookies());
