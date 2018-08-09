@@ -1,57 +1,10 @@
-/*function hourlyCustomers(x,y){
-  min = Math.ceil(x);
-  max = Math.floor(y+1);
-  return Math.floor(Math.random()*(max-min)) + min;
-}
 
-
-function hourlyCookies(x,y){
-  min = Math.ceil(x);
-  max = Math.floor(y);
-  return Math.floor((Math.random() * (max-min)) + min) * 5.2;
-}
-
-var store1 = {
-  name:"Pioneer Square",
-  hourlyCookies: function(x,y){
-    min = Math.ceil(x);
-    max = Math.floor(y);
-    return Math.floor((Math.random() * (max-min)) + min) * 5.2;
-  },
-  specificCookies: hourlyCookies(88,17),
-}
-// So the issue here is when I include the function in the object, I can call the function from the console and get good results. However, when I define the function outside the object, then add a call for it within my object, I always get the one answer.
-
-var store2 = {
-  name:"Portland Airport",
-
-}
-
-var store3 = {
-  name:"Washington Square",
-}
-
-var store4 = {
-  name:"Sellwood",
-}
-
-var store5 = {
-  name:"Pearl District",
-}
-*/
-
-
-
-var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies){
+var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, identification){
   this.shoppeName = shoppeName;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.averageCookies = averageCookies;
-  //mincustomers
-  //maxcustomers
-  //average cookies per hour
-  //generate random hourlycustomers
-  //
+  this.identification = identification
 }
 
 Shoppe.prototype.generateRandom = function(){
@@ -59,15 +12,40 @@ Shoppe.prototype.generateRandom = function(){
 }
 
 Shoppe.prototype.randomHourlyCookies = function(){
-  var thisHour = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
-  return (thisHour * this.averageCookies);
+  var thisHour = Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers;
+  return Math.floor(thisHour * this.averageCookies);
 }
 
-var PioneerSquareShoppe = new Shoppe("Pioneer Square", 17, 88, 5.2);
-var PortlandAirportShoppe = new Shoppe("Portland Airport", 6, 24, 1.2);
-var WashingtonSquareShoppe = new Shoppe("Washington Square", 11, 38, 1.9);
-var SellwoodShoppe = new Shoppe("Sellwood", 20, 48, 3.3);
-var PearlDistrictShoppe = new Shoppe("Pearl District", 3, 24, 2.6);
+var PioneerSquareShoppe = new Shoppe("Pioneer Square", 17, 88, 5.2, 'pioneer');
+var PortlandAirportShoppe = new Shoppe("Portland Airport", 6, 24, 1.2, 'airport');
+var WashingtonSquareShoppe = new Shoppe("Washington Square", 11, 38, 1.9, 'square');
+var SellwoodShoppe = new Shoppe("Sellwood", 20, 48, 3.3,'sellwood');
+var PearlDistrictShoppe = new Shoppe("Pearl District", 3, 24, 2.6,'pearl');
+
+var hours = [
+  '10am', '11am', '12am','1pm','2pm','3pm','4pm','5pm',
+]
+
+/*Shoppe.prototype.toHTML = function(){
+  return '<li>' +  this.randomHourlyCookies() +'</li>'
+}*/
+
+Shoppe.prototype.buildList = function(){
+  var list = document.getElementById(this.identification);
+  var dailyTotal = 0;
+  for (var index = 0; index < hours.length; index++){
+    var hour = hours[index];
+    var cookies = this.randomHourlyCookies();
+    list.innerHTML += '<li>'+ hour +' ' + cookies +'</li>';
+    dailyTotal += cookies;
+  }
+  list.innerHTML += '<li>Total: '+ dailyTotal + '</li>';
+}
+PioneerSquareShoppe.buildList();
+PortlandAirportShoppe.buildList();
+WashingtonSquareShoppe.buildList();
+SellwoodShoppe.buildList();
+PearlDistrictShoppe.buildList();
 
 console.log(PioneerSquareShoppe);
 console.log(PioneerSquareShoppe.randomHourlyCookies());
@@ -80,7 +58,6 @@ console.log(WashingtonSquareShoppe.randomHourlyCookies());
 
 console.log(SellwoodShoppe);
 console.log(SellwoodShoppe.randomHourlyCookies());
-
 
 console.log(PearlDistrictShoppe);
 console.log(PearlDistrictShoppe.randomHourlyCookies());
