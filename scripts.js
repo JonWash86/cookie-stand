@@ -37,6 +37,12 @@ Shoppe.prototype.buildList = function(){
   }
   list.innerHTML += '<li>Total: '+ dailyTotal + '</li>';
 }
+
+//stretch goal: build a table for the shoppes
+
+
+//end fumbling at stretch goal. 
+
 PioneerSquareShoppe.buildList();
 PortlandAirportShoppe.buildList();
 WashingtonSquareShoppe.buildList();
