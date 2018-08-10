@@ -1,5 +1,5 @@
 
-var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, identification){
+var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, identification, tableID){
   this.shoppeName = shoppeName;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
@@ -16,7 +16,7 @@ Shoppe.prototype.randomHourlyCookies = function(){
   return Math.floor(thisHour * this.averageCookies);
 }
 
-var PioneerSquareShoppe = new Shoppe("Pioneer Square", 17, 88, 5.2, 'pioneer');
+var PioneerSquareShoppe = new Shoppe("Pioneer Square", 17, 88, 5.2, 'pioneer','pioneerTable');
 var PortlandAirportShoppe = new Shoppe("Portland Airport", 6, 24, 1.2, 'airport');
 var WashingtonSquareShoppe = new Shoppe("Washington Square", 11, 38, 1.9, 'square');
 var SellwoodShoppe = new Shoppe("Sellwood", 20, 48, 3.3,'sellwood');
@@ -39,9 +39,19 @@ Shoppe.prototype.buildList = function(){
 }
 
 //stretch goal: build a table for the shoppes
+Shoppe.prototype.buildTable = function(){
+  var table = document.getElementById(this.tableID);
+  var dailyTotal = 0;
+  for (var index = 0; index < hours.length; index++){
+    var cookies = this.randomHourlyCookies();
+    table.innerHTML += '<td>' + cookies +'</td>';
+    dailyTotal += cookies;
+  }
+  table.innertHTML += '<td>' + dailyTotal +'</td>';
+}
+PioneerSquareShoppe.buildTable();
 
-
-//end fumbling at stretch goal. 
+//end fumbling at stretch goal.
 
 PioneerSquareShoppe.buildList();
 PortlandAirportShoppe.buildList();
