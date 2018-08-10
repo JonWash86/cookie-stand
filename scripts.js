@@ -4,7 +4,7 @@ var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, id
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.averageCookies = averageCookies;
-  this.identification = identification
+  this.identification = identification;
 }
 
 Shoppe.prototype.generateRandom = function(){
@@ -23,12 +23,8 @@ var SellwoodShoppe = new Shoppe("Sellwood", 20, 48, 3.3,'sellwood');
 var PearlDistrictShoppe = new Shoppe("Pearl District", 3, 24, 2.6,'pearl');
 
 var hours = [
-  '10am', '11am', '12am','1pm','2pm','3pm','4pm','5pm',
+  '10am: ', '11am: ', '12am: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ',
 ]
-
-/*Shoppe.prototype.toHTML = function(){
-  return '<li>' +  this.randomHourlyCookies() +'</li>'
-}*/
 
 Shoppe.prototype.buildList = function(){
   var list = document.getElementById(this.identification);
@@ -36,7 +32,7 @@ Shoppe.prototype.buildList = function(){
   for (var index = 0; index < hours.length; index++){
     var hour = hours[index];
     var cookies = this.randomHourlyCookies();
-    list.innerHTML += '<li>'+ hour +' ' + cookies +'</li>';
+    list.innerHTML += '<li>'+ hour +'   ' + cookies +'</li>';
     dailyTotal += cookies;
   }
   list.innerHTML += '<li>Total: '+ dailyTotal + '</li>';

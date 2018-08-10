@@ -2,24 +2,32 @@ body{
 background-color:#FA8072;
 }
 
-#siteHeading{
-    vertical-align:middle;
-    color:#14080E;
-}
+h1{
+  display:inline;
+  vertial-align:center;
+  text-align:center;
 
-h1.siteheading{
-  color:#14080E;
-  align:center;
+  color:#BCF4F5;
 }
 
 h2{
-  color:#484A47;
+  color:#DAEFB3;
 }
 
 h3{
-  color:#484A47;
+  color:#DAEFB3;
 }
 
 #logo{
-  width:100px
+  width:150px;
+  vertical-align:middle;
+  align:center;
+}
+
+#siteTitle{
+  text-align:center;
+}
+
+li{
+  color:#BCF4F5
 }
