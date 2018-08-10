@@ -4,18 +4,20 @@ background-color:#FA8072;
 
 h1{
   display:inline;
+  font-family: 'Abel', sans-serif;
   vertial-align:center;
   text-align:center;
-
   color:#BCF4F5;
 }
 
 h2{
+  font-family: 'Abel', sans-serif;
   color:#DAEFB3;
   text-align:center;
 }
 
 h3{
+  font-family:"Helvetica", sans-serif;
   color:#DAEFB3;
   padding-left:40px;
 }
@@ -31,12 +33,14 @@ h3{
 }
 
 #happyPeople{
+  display:block;
   margin-left:auto;
   margin-right:auto;
-    width:30%;
+  width:30%;
 }
 
 p{
+  font-family:"Helvetica", sans-serif;
   display: inline-block;
   width: calc((100%/4) - 5em);
   vertical-align: top;
@@ -46,15 +50,27 @@ p{
   align:center;
 }
 
+
 #salmon{
   display:inline-block;
   width: calc((100%/4) - 4em);
 }
 
+#estimates{
+    background-color:#173064;
+}
+
 #story{
   align:middle;
+  background-color:#173064;
 }
 
 li{
+  font-family:"Roboto Slab", serif;
   color:#BCF4F5;
+}
+
+#columns{
+  display:inline-block;
+  width: calc((100%/3) - 4em);
 }
