@@ -7,10 +7,6 @@ var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, id
   this.identification = identification;
 }
 
-Shoppe.prototype.generateRandom = function(){
-  return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
-}
-
 Shoppe.prototype.randomHourlyCookies = function(){
   var thisHour = Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers;
   return Math.floor(thisHour * this.averageCookies);
@@ -37,21 +33,6 @@ Shoppe.prototype.buildList = function(){
   }
   list.innerHTML += '<li>Total: '+ dailyTotal + '</li>';
 }
-
-//stretch goal: build a table for the shoppes
-Shoppe.prototype.buildTable = function(){
-  var table = document.getElementById(this.tableID);
-  var dailyTotal = 0;
-  for (var index = 0; index < hours.length; index++){
-    var cookies = this.randomHourlyCookies();
-    table.innerHTML += '<td>' + cookies +'</td>';
-    dailyTotal += cookies;
-  }
-  table.innertHTML += '<td>' + dailyTotal +'</td>';
-}
-PioneerSquareShoppe.buildTable();
-
-//end fumbling at stretch goal.
 
 PioneerSquareShoppe.buildList();
 PortlandAirportShoppe.buildList();
