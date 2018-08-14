@@ -66,14 +66,11 @@ p{
 }
 
 li{
+  list-style-type: circle;
   font-family:"Roboto Slab", serif;
   color:#BCF4F5;
 }
 
-#blueList{
-  font-family:"Roboto Slab", serif;
-  color:#BCF4F5;
-}
 
 #columns{
   display:inline-block;

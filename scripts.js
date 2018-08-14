@@ -1,4 +1,3 @@
-
 var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies, identification, tableID){
   this.shoppeName = shoppeName;
   this.minCustomers = minCustomers;
@@ -21,9 +20,6 @@ var PearlDistrictShoppe = new Shoppe("Pearl District", 3, 24, 2.6,'pearl');
 var hours = [
   '10am: ', '11am: ', '12am: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ',
 ]
-
-
-//below I've copied the original buildlist function and am updating it to create a node on the DOM and add the list items that way.
 
 Shoppe.prototype.writeList = function(){
   var list = document.getElementById(this.identification);
@@ -49,9 +45,8 @@ PortlandAirportShoppe.writeList();
 WashingtonSquareShoppe.writeList();
 SellwoodShoppe.writeList();
 PearlDistrictShoppe.writeList();
-//end of updated function.
 
-/*the following function is commented out for now. It is the untouched buildlist function.
+/*the following function is commented out for now. It is the untouched buildlist function from Version One.
 Shoppe.prototype.buildList = function(){
 var list = document.getElementById(this.identification);
 var dailyTotal = 0;
