@@ -22,6 +22,11 @@ h3{
   padding-left:40px;
 }
 
+th{
+  font-family:"Helvetica", sans-serif;
+  color:#DAEFB3;
+}
+
 #logo{
   width:150px;
   vertical-align:middle;
@@ -65,14 +70,24 @@ p{
   background-color:#173064;
 }
 
-li{
-  list-style-type: circle;
+#columns{
+  display:inline-table;
+  width: calc((100%/5) - 4em);
   font-family:"Roboto Slab", serif;
   color:#BCF4F5;
+  text-align:center;
+  padding-left:40px;
+  table-layout: fixed;
 }
 
+td{
+  background-color: #58A4B0;
+}
 
-#columns{
-  display:inline-block;
-  width: calc((100%/3) - 4em);
+#td.even{
+  background-color: #A9BCD0;
+}
+
+#table{
+  width: 33%
 }
