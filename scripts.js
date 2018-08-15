@@ -21,6 +21,52 @@ var hours = [
   '10am: ', '11am: ', '12am: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ',
 ]
 
+//write a function which writes the table heading to the proper area.
+var shoppes = [
+  PioneerSquareShoppe,
+  PortlandAirportShoppe,
+  WashingtonSquareShoppe,
+  SellwoodShoppe,
+  PearlDistrictShoppe,
+]
+
+Shoppe.prototype.writeTableHeading = function(){
+  var div = document.getElementById('salesTables');
+  var table = document.createElement('TABLE');
+  var row = document.createElement('tr');
+  var cell = document.createElement('td');
+  var heading = document.createElement('th');
+  heading.innerText = this.shoppeName;
+  table.appendChild(heading);
+  div.appendChild(table);
+  /*for (var index = 0; index < hours.length; index++){
+    var hour = hours[index];
+    var cookies = this.randomHourlyCookies();
+    cell.innerText = hour;
+    row.appendChild(cell);
+    cell = document.createElement('td');
+    cell.innerText = cookies;
+    row.appendChild(cell);
+    table.appendChild(row);
+
+  };*/
+}
+PioneerSquareShoppe.writeTableHeading(tableReference);
+
+var tableReference = document.getElementById('salesTables');
+
+for (var index = 0; index < shoppes.length; index++){
+  shoppes[index].writeTableHeading(tableReference);
+}
+
+
+
+//below is the new, in-progress function to write the table.
+
+
+/*
+//The following is the commented-out original function, which wrote a list.
+
 Shoppe.prototype.writeList = function(){
   var list = document.getElementById(this.identification);
   var dailyTotal = 0;
@@ -46,24 +92,7 @@ WashingtonSquareShoppe.writeList();
 SellwoodShoppe.writeList();
 PearlDistrictShoppe.writeList();
 
-/*the following function is commented out for now. It is the untouched buildlist function from Version One.
-Shoppe.prototype.buildList = function(){
-var list = document.getElementById(this.identification);
-var dailyTotal = 0;
-for (var index = 0; index < hours.length; index++){
-var hour = hours[index];
-var cookies = this.randomHourlyCookies();
-list.innerHTML += '<li>'+ hour +'   ' + cookies +'</li>';
-dailyTotal += cookies;
-}
-list.innerHTML += '<li>Total: '+ dailyTotal + '</li>';
-} */
 
-//PioneerSquareShoppe.buildList();
-//PortlandAirportShoppe.buildList();
-//WashingtonSquareShoppe.buildList();
-//SellwoodShoppe.buildList();
-//PearlDistrictShoppe.buildList();
 
 console.log(PioneerSquareShoppe);
 console.log(PioneerSquareShoppe.randomHourlyCookies());
@@ -79,3 +108,5 @@ console.log(SellwoodShoppe.randomHourlyCookies());
 
 console.log(PearlDistrictShoppe);
 console.log(PearlDistrictShoppe.randomHourlyCookies());
+
+*/
