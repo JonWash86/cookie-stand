@@ -47,14 +47,13 @@ th{
 p{
   font-family:"Helvetica", sans-serif;
   display: inline-block;
-  width: calc((100%/4) - 5em);
+  width: calc((100%/4) - 4em);
   vertical-align: top;
   margin: 1em;
   color:#BCF4F5;
   padding-left:25px;
   align:center;
 }
-
 
 #salmon{
   display:inline-block;
@@ -84,9 +83,6 @@ td{
   background-color: #58A4B0;
 }
 
-#td.even{
-  background-color: #A9BCD0;
-}
 
 #table{
   width: 33%
