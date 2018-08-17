@@ -69,3 +69,50 @@ var tableReference = document.getElementById('salesTables');
 for (var index = 0; index < shoppes.length; index++){
   shoppes[index].writeTableHeading(tableReference);
 }
+
+// New function below for submitting the form 'addAStore' and updating the new store's information to the existing set of tables.
+
+function enterNewStore (){
+  var newShoppeName = document.getElementById('newName');
+  var newShoppeMinCustomers = document.getElementById('newMin');
+  var newShoppeMaxCustomers = document.getElementById('newMax');
+  var newShoppeAvgCookies = document.getElementById('newAvg')
+
+  //below is a copy of the write to table function, which I should cannibalize in order to create my table from the input. It's not a graceful solution, but it'll just grab all inputs and spit them out on the page.
+  var div = document.getElementById('salesTables');
+  var table = document.createElement('TABLE');
+  var row = document.createElement('tr');
+  var cell = document.createElement('td');
+  var heading = document.createElement('th');
+  var dailyTotal = 0;
+  table.setAttribute('id', 'columns');
+  heading.innerText = this.shoppeName;
+  heading.setAttribute('colspan','2');
+  table.appendChild(heading);
+  div.appendChild(table);
+  for (var index = 0; index < hours.length; index++){
+    var cell = document.createElement('td');
+    var row = document.createElement('tr');
+    var hour = hours[index];
+    var cookies = this.randomHourlyCookies();
+    cell.innerText = hour;
+    console.log(cell);
+    row.appendChild(cell);
+    console.log(row);
+    cell = document.createElement('td');
+    cell.innerText = cookies;
+    console.log(cell);
+    row.appendChild(cell);
+    console.log(row);
+    table.appendChild(row);
+    dailyTotal += cookies;
+  };
+  cell = document.createElement('td');
+  cell.innerText = ('Total: ' + dailyTotal);
+  cell.setAttribute('colspan', '2');
+  table.appendChild(cell);
+
+}
+var elForm = document.getElementById('addAStore');
+
+elForm.addEventListener('submit', enterNewStore, false);
