@@ -36,19 +36,20 @@
     <div id='salesTables'>
     </div>
   </section>
-  <form id="addAStore">
+  <form id='addAStore'>
     <fieldset>
       Enter the store's location:&nbsp;<input type='text' id='newName'>
       <br><br>
-      Please enter the minimum daily customers:&nbsp;<input type='text' id='newMin'>
+      Please enter the minimum daily customers:&nbsp;<input type='number' id='newMin'>
       <br><br>
-      Please enter the maximum daily customers:&nbsp;<input type='text' id'newMax'>
+      Please enter the maximum daily customers:&nbsp;<input type='number' id='newMax'>
       <br><br>
-      Lastly, how many cookies per customer are sold on average?&nbsp;<input type='text' id'newAvg'>
+      Lastly, how many cookies per customer are sold on average?&nbsp;<input type='number' id='newAvg'>
       <br><br>
-      <input type="button" value="Submit" onclick="questionTwo()">
+      <input type='button' value='submit' id='enterNew'>
   </fieldset>
   </form>
+  <div id='writeTest'></div>
 
   <script type='text/javascript' src='scripts.js'></script>
 </body>
