@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<header>
   <link rel="stylesheet" type="text/css" href="styling.css">
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-</head>
+</header>
 <body>
   <div id="siteTitle">
     <img src="fishies.png" id="logo" alt="Pat's Logo">
@@ -12,30 +12,44 @@
     <img src="fishies.png" id="logo" alt="Pat's Logo">
     <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
   </div>
-  <div id="story">
+  <section id="story">
     <h2>Bringing a taste of the northwest to the northwest!</h2>
 
     <p>Established in 2017, Pat's has become an an ages-old tradition of Portland fad cuisine. How good are our patented salmon cookies? Just barely good enough to justify spending twenty-five minutes in line!</p>
     <p>Blending only the finest sockeye with gluten-free spelt flour and carbonated sugar, Pat has spent tens of hours refining his now-famous recipe.</p>
     <p>With over five locations across the metro Portland area, Pat's is ubiquitous and inescapable. So won't you give in to the hype? Come down and try them for yourself!</p>
     <img src="salmon.png" id="salmon" alt="salmon">
-  </div>
+  </section>
 
+  <section id="people">
+    <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
 
-  <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
+    <h2>Be one of the many! Buy Pat's salmon cookies!</h2>
+    <img src="family.jpg" id="happyPeople" alt="join us">
 
-  <h2>Be one of the many! Buy Pat's salmon cookies!</h2>
-  <img src="family.jpg" id="happyPeople" alt="join us">
+    <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
+  </section>
 
-  <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
-
-  <div id="estimates">
+  <section id='estimates'>
 
     <h2>Just look at our hourly sales estimates by location!</h2>
     <div id='salesTables'>
     </div>
-  </div>
+  </section>
+  <form id="addAStore">
+    <fieldset>
+      Enter the store's location:&nbsp;<input type='text' id='answerTwo'>
+      <br><br>
+      Please enter the minimum daily customers:&nbsp;<input type='text' id=''>
+      <br><br>
+      Please enter the maximum daily customers:&nbsp;<input type='text' id''>
+      <br><br>
+      Lastly, how many cookies per customer are sold on average?&nbsp;<input type='text' id''>
+      <br><br>
+      <input type="button" value="Submit" onclick="questionTwo()">
+  </fieldset>
+  </form>
 
-  <script type="text/javascript" src="scripts.js"></script>
+  <script type='text/javascript' src='scripts.js'></script>
 </body>
 </html>

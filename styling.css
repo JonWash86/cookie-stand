@@ -71,19 +71,23 @@ p{
 
 #columns{
   display:inline-table;
+  table align: center;
   width: calc((100%/5) - 4em);
   font-family:"Roboto Slab", serif;
   color:#BCF4F5;
   text-align:center;
-  padding-left:40px;
+  /*padding-left:10px;*/
   table-layout: fixed;
+
 }
 
 td{
   background-color: #58A4B0;
 }
+ #salesTables{
+   text-align: center;
+ }
 
-
-#table{
-  width: 33%
-}
+ #addAStore{
+   display:block;
+ }
