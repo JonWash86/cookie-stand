@@ -69,7 +69,7 @@ p{
   background-color:#173064;
 }
 
-#columns{
+.columns{
   display:inline-table;
   table align: center;
   width: calc((100%/5) - 4em);
@@ -90,4 +90,13 @@ td{
 
  #addAStore{
    display:block;
+   color:#BCF4F5;
+   background-color: #173064;
+   font-family:"Roboto Slab", serif;
  }
+
+ input{
+   background-color:#FA8072;
+   border-color:#FA8072;
+   font-family:"Roboto Slab", serif;
+ };
