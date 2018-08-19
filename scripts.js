@@ -4,9 +4,12 @@ var Shoppe = function(shoppeName, minCustomers, maxCustomers, averageCookies){
   this.maxCustomers = maxCustomers;
   this.averageCookies = averageCookies;
   this.randomHourlyCookies = function(){
-    var thisHour = Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers;
+    var thisHour = (Math.random() * (parseInt(this.maxCustomers) - parseInt(this.minCustomers) + 1)) + parseInt(this.minCustomers);
+    console.log('max customers: ' + this.maxCustomers);
+    console.log('min customers: ' + this.minCustomers);
+    console.log('customers: ' + thisHour);
     return Math.floor(thisHour * this.averageCookies);
-  }
+  };
 }
 
 var hours = [
@@ -53,16 +56,30 @@ for (var index = 0; index < shoppes.length; index++){
   shoppes[index].writeTableHeading();
 }
 
-
 function enterNewStore(){
   var newShoppeName = document.getElementById('newName').value;
   var newShoppeMinCustomers = document.getElementById('newMin').value;
   var newShoppeMaxCustomers = document.getElementById('newMax').value;
   var newShoppeAvgCookies = document.getElementById('newAvg').value;
-  shoppes.push(new Shoppe(newShoppeName, newShoppeMinCustomers, newShoppeMaxCustomers, newShoppeAvgCookies));
-  event.preventDefault();
-  shoppes[shoppes.length -1].writeTableHeading();
+  console.log('buttonpress');
+  if ((newName.value =='')||(newMin.value=='')||(newMax.value=='')||(newAvg.value=='')){
+    alert('Please enter all the fields.');
+  }
+  else {
+    shoppes.push(new Shoppe(newShoppeName, newShoppeMinCustomers, newShoppeMaxCustomers, newShoppeAvgCookies));
+    shoppes[shoppes.length -1].writeTableHeading();
+  };
 }
 
 var elSubmit = document.getElementById('enterNew');
 elSubmit.addEventListener('click', enterNewStore, false);
+
+document.getElementsByClassName('shopForm')
+
+function checkEmpty(i){
+  var entry = document.getElementsByClassName('shopForm')[i];
+  if (entry.value ==''){
+     alert('Please don\'t leave this field empty.');
+  }
+  else return (true);
+}

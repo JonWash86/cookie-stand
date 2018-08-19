@@ -31,26 +31,25 @@
   </section>
 
   <section id='estimates'>
-
     <h2>Just look at our hourly sales estimates by location!</h2>
     <div id='salesTables'>
     </div>
   </section>
+
+  <hr style="align:center; width:75%; height:3px; color:#BCF4F5; background-color:#DAEFB3;">
   <form id='addAStore'>
     <fieldset>
-      Enter the store's location:&nbsp;<input type='text' id='newName'>
+      Enter the store's location:&nbsp;<input type='text' id='newName' class='shopForm' onblur='checkEmpty(0)'>
       <br><br>
-      Please enter the minimum daily customers:&nbsp;<input type='number' id='newMin'>
+      Please enter the minimum daily customers:&nbsp;<input type='number' id='newMin' class='shopForm' onblur='checkEmpty(1)'>
       <br><br>
-      Please enter the maximum daily customers:&nbsp;<input type='number' id='newMax'>
+      Please enter the maximum daily customers:&nbsp;<input type='number' id='newMax' class='shopForm' onblur='checkEmpty(2)'>
       <br><br>
-      Lastly, how many cookies per customer are sold on average?&nbsp;<input type='number' id='newAvg'>
+      Lastly, how many cookies per customer are sold on average?&nbsp;<input type='number' id='newAvg' class='shopForm' onblur='checkEmpty(3)'>
       <br><br>
       <input type='button' value='submit' id='enterNew'>
   </fieldset>
   </form>
-
-
   <script type='text/javascript' src='scripts.js'></script>
 </body>
 </html>
